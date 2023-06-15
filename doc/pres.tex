@@ -1,0 +1,144 @@
+\documentclass[aspectratio=43]{beamer}
+\usetheme{Berlin}
+
+\usepackage[czech]{babel}
+\usecolortheme{dolphin}
+\definecolor{accent}{HTML}{559915}
+\setbeamercolor{structure}{fg=accent}
+\usepackage{graphicx}
+\usepackage{dirtree}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{bbding}
+\usepackage{xurl}
+\usepackage{scrextend}
+\usepackage{minted}
+\usepackage{appendixnumberbeamer}
+
+\captionsetup{labelformat=empty}
+
+\beamertemplatenavigationsymbolsempty
+\defbeamertemplate*{title page}{customized}[1][]
+{
+	\begin{center}
+	\usebeamerfont{title}\inserttitle\par
+	\usebeamerfont{subtitle}\insertsubtitle\par
+	\end{center}
+	\vfill
+	\usebeamercolor[fg]{subtitle}
+	\usebeamerfont{author}\insertauthor\par
+	\usebeamerfont{institute}\insertinstitute\par
+	\usebeamerfont{date}\insertdate\par
+	\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+}
+
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+
+
+\title{Scheduler}
+\subtitle{kalendář a budík v jednom}
+\author{Josef Litoš}
+\date{}
+\institute{ČVUT -- FIT}
+\setbeamertemplate{sidebar right}{}
+\setbeamertemplate{footline}{%
+\hfill\textbf{\insertframenumber{} / \inserttotalframenumber} \hspace{0.01cm} \vspace{0.1cm}}
+\setbeamerfont{footnote}{size=\tiny}
+
+\begin{document}
+
+\begin{frame}[plain]
+	\maketitle
+\end{frame}
+
+\clearpage
+\setcounter{framenumber}{0}
+
+\frame{
+	\frametitle{Vznik}
+	\section{Vznik}
+	\begin{itemize}
+		\item je rozlišení nutné
+		\item systematické složení
+		\item prozkoumání modernějších přístupů
+	\end{itemize}
+}
+
+\section{Struktura}
+\frame{
+	\frametitle{Komunikace s databází}
+	\begin{itemize}
+		\item pouze primitivní
+		\item \textit{room} anotace odvádí práci za nás
+		\item strukturu nutné změnit při hlubším rozšíření funkcí
+		\item objekty řeší pouze sebe, změny delegují dál
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Nastavení}
+	\begin{itemize}
+		\item podpora samotným systémem
+		\item existují 3+ api, fragmentace
+		\item vyzkoušení podoby v \textit{SimpleTools}
+	\end{itemize}
+}
+
+\section{Provoz}
+\frame{
+	\frametitle{Načtení}
+	\begin{itemize}
+		\item vyhnutí čekání na data
+		\item po načtení celé databáze teprve pracujeme s daty
+		\item nezávislé na typu spuštění (nastavení/celá aplikace)
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Běh}
+	\begin{itemize}
+		\item registrace nejbližšího oznámení
+		\item nová při každé změně
+		\item předchozí zabíjíme, pouze poslední zůstane
+		\item mohlo by být robustnější
+	\end{itemize}
+}
+
+\section{Tvorba}
+\frame{
+	\frametitle{Editor}
+	\begin{itemize}
+		\item všechna práce uživatele
+		\item možná příliš pevně spojené
+		\item pouze sbírá data, neřeší zpracování
+		\item zjištění: systémové dialogy pomalé?
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Typy oznámení}
+	\begin{itemize}
+		\item řazení datem
+		\item kontrola stavu
+		\item zrušení možné obousměrně
+		\item automatické skrytí ostatních
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Závěr}
+	\section{Závěr}
+	\begin{itemize}
+		\item plně funkční
+		\item nutno přidat hook pro coldboot
+		\item hlubší průzkum oznámení a synchronizace
+		\item UX potřebují zkrášlit
+		\item vytvořit logo
+	\end{itemize}
+}
+\end{document}
+

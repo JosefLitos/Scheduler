@@ -15,3 +15,13 @@ captures
 .externalNativeBuild
 .cxx
 local.properties
+*.aux
+*.log
+*.lof
+*_minted-*
+*.toc
+*.bbl
+*.blg
+*.out
+*.snm
+*.nav
