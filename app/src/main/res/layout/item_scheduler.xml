@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/selector"
+    android:padding="@dimen/small_margin">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/tiny_margin"
+        android:textAlignment="center">
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scheduled"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/smaller_text_size" />
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/medium_text_size"
+            tools:text="31.12. 23:59" />
+    </LinearLayout>
+
+    <com.simplemobiletools.commons.views.MyTextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        tools:text="Event description in a few words fitting here!" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/tiny_margin"
+        android:textAlignment="center">
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/repeat_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/smaller_text_size"
+            tools:text="Frequency" />
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/repeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            tools:text="m/w/d H:M" />
+    </LinearLayout>
+
+</LinearLayout>

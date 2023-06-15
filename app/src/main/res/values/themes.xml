@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <style name="SettingsItemTextStyle" parent="@style/SettingsHolderTextViewOneLinerStyle">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+</resources>

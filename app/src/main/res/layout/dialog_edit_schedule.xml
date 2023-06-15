@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dialogs.EditScheduleDialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/AppTheme.ActionBar.TitleTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_primary"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="12dp"
+            android:text="Edit Schedule" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="Start"
+                android:textColor="@color/color_primary"
+                android:textSize="@dimen/big_text_size" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/start_base_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    tools:text="from this year" />
+
+                <SeekBar
+                    android:id="@+id/start_base_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:max="5"
+                    android:min="-1"
+                    android:paddingTop="10dp"
+                    android:progress="-1" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/start_timestamp"
+            layout="@layout/edit_timestamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/repeat_title"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:text="Repeat every"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/big_text_size" />
+
+        <include
+            android:id="@+id/repeat_timestamp"
+            layout="@layout/edit_timestamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="Until"
+                android:textColor="@color/color_primary"
+                android:textSize="@dimen/big_text_size" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/until_base_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    tools:text="from this year" />
+
+                <SeekBar
+                    android:id="@+id/until_base_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:max="6"
+                    android:min="-1"
+                    android:paddingTop="10dp"
+                    android:progress="-1" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/until_timestamp"
+            layout="@layout/edit_timestamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:text="Description"
+            android:textColor="@color/color_primary"
+            android:textSize="@dimen/big_text_size" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textAlignment="center"
+            tools:text="Some one-liner description that fits here perfectly" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="5dp">
+
+            <Button
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/toggle_button"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingHorizontal="19dp"
+                android:paddingVertical="7dp"
+                android:textColor="@color/default_text_color"
+                tools:ignore="RelativeOverlap"
+                tools:text="Event" />
+
+            <com.simplemobiletools.commons.views.MyAppCompatCheckbox
+                android:id="@+id/active"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layoutDirection="rtl"
+                android:paddingStart="7dp"
+                android:paddingEnd="15dp"
+                android:text="Active"
+                android:textSize="@dimen/bigger_text_size"
+                tools:checked="true" />
+        </RelativeLayout>
+
+        <include
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="5dp">
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Cancel"
+                android:textColor="@color/default_background_color" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Delete"
+                android:textColor="@color/default_background_color" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="OK"
+                android:textColor="@color/default_background_color" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
